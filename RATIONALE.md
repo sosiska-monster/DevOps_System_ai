@@ -318,3 +318,12 @@
 **Rejected:** recreating existing product repos, publishing private code by default, per-command commits and transcripts, auto-patching central methodology mid-test, pretending Git shows all agent attempts or costs.
 **Testing:** T108–T112 added; all NOT RUN. No end-to-end retrospective performed.
 **Revisit when:** completed pilots demonstrate insufficient history, needless Git overhead or repeatable failures despite the rule.
+
+## RAD-032 — Optional independent black-box user acceptance (0.2.0-draft)
+
+**Status:** IMPLEMENTED AS GUIDANCE, NOT RUN IN A REAL PRODUCT.
+**Observation:** a programmer's own unit tests or green build do not prove that a client can use a finished feature. The owner wants a separate user-persona tester who clicks through the application without knowing source code or being permitted to change implementation, and sends evidence-backed feedback to the architect.
+**Decision:** keep programmer (writes approved scope), architect/DevOps (requirements, triage, user permissions) and **optional restricted user tester** (only running UI or consumer API) separate. Use the tester at meaningful user-journey/MVP/release boundaries; skip trivial FAST edits. Independently verify technical source-access isolation in the actual product runner — chat labels and prompt-only bans are not sufficient. Execute interactions with disposable safe data, no unapproved production, payments or notifications. Return observed steps, expected/actual, environment/evidence, reproducible bugs vs subjective UX suggestions. Architect validates against approved requirements; any code fix is a separately approved minimal task, followed by retest. With no tools or reliable isolation return NOT RUN / NOT VERIFIED, not imagined feedback.
+**Rejected:** automatic always-on multiagent stack, duplicate QA bureaucracy on every button color change, code-reading tester masquerading as black-box, allowing tester to edit source or approve requirements, pretending an installed browser/sandbox exists, fake click logs and unsanctioned external side effects.
+**Testing:** T113–T117 added; all NOT RUN. Existing active pilot retains its own pinned older methodology SHA. This documentation addition is for future explicit adoption.
+**Revisit when:** completed-product evidence establishes whether isolated user testing catches otherwise missed defects without excessive token/tool and human overhead.

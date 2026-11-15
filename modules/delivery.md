@@ -128,6 +128,32 @@ For a user-facing app, "build succeeded" or "tests passed" does **not** mean the
 
 Record `RUNTIME ACCEPTANCE: PASS | FAIL | NOT RUN | NOT APPLICABLE`, test scenario, real result/artifact, user-visible gaps and fetchable evidence. Do not use live customer data/production credentials without approval. Web compares actual behavior with confirmed acceptance and approved design. A parent/root graph node is not ACCEPTED solely because leaf tasks are DONE; require relevant integrated evidence and appropriate customer signoff.
 
+## Independent Black-Box User Tester — optional user-facing acceptance
+
+**Role separation:** architect/DevOps decides what to check and triages findings; programmer changes source only for an approved task; an **independent user tester** observes the *running product as a client would*. The tester receives a user persona, approved user journey, expected business outcome, safe preview/staging URL, permitted test account/data, viewport/device and explicit action boundaries. Do **not** pass source code, repository, Git history, internal implementation notes, debug consoles or Codex programming tools to this role. Separate chat names alone do not provide isolation: before describing the tester as black-box, verify that its actual tools/credentials/workspace cannot access source or write project files (see `modules/environment.md`). If impossible, label it `ISOLATION NOT VERIFIED` and do not claim independent black-box assurance; choose a real restricted runner or human test.
+
+**Trigger proportional to value:** use after a significant user-facing journey or at MVP/release acceptance, not after every FAST CSS/text fix. For API/CLI tools use an analogous **external consumer** interface, not a fake browser session. Do not install Playwright, browser MCPs, subagent frameworks, create chats/worktrees or start paid runs merely because the role is documented; real tool/access setup is product-specific and needs appropriate approval. If there is no authorized interactive tool or reachable runnable product, return `NOT RUN`, never fictional clicks or screenshots.
+
+**Safe execution:** choose preview/staging with disposable/test data and least privileges. A browser "click" may cause writes, notifications, charges or remote side effects; authorize these individually and block real payments, destructive actions, production credentials and customer records by default. Test only already approved product functionality, including unhappy paths and mobile/responsive behavior where relevant; do not infer hidden business rules.
+
+**Evidence contract:** `PERSONA | PRODUCT/BUILD REF | URL/ENVIRONMENT | DEVICE/VIEWPORT | SCENARIO | STEPS ACTUALLY TAKEN | EXPECTED | OBSERVED | SCREENSHOT/TRACE (if available) | CATEGORY (REPRODUCIBLE BUG / UX FEEDBACK / UNKNOWN) | SEVERITY + IMPACT | RESULT (PASS/FAIL/NOT RUN)`. An opinion like "button looks odd" is **feedback**, not a confirmed customer requirement. No invented screenshots, human reactions, production observations or device testing.
+
+**Handoff:** tester only reports; it does **not** modify code, file Issues automatically, approve its own design choices, or expand requirements. Architect verifies evidence against approved acceptance and prioritizes `FIX NOW / PROPOSE TO OWNER / DEFER / INVALID / NEEDS EVIDENCE`; user/customer authorizes consequential fixes. Programmer gets **one scoped bug fix** with minimal diff (no opportunistic refactor), technical tests and a retest of the same visible journey. Stop after that approved outcome. The tester's independent failure is useful evidence; the programmer's own green tests are not sufficient substitute.
+
+**Short copyable role prompt (adapt permissions before use):**
+```text
+ROLE: Independent Black-Box User Tester, not a developer.
+SCOPE: Use ONLY the authorized running application UI and disposable test account.
+DO NOT: read repo/source/Git, invoke shell/editor, change code/requirements,
+access secrets, run production/paid/destructive operations or invent interactions.
+TASK: Follow the approved user scenario as a normal client; test visible success
+and realistic error paths within authorized bounds.
+REPORT: actual steps, expected vs observed, environment, evidence, severity,
+reproducible bug vs subjective UX feedback, PASS/FAIL/NOT RUN.
+If UI access or technical isolation is unverified: STOP and state limitation.
+Submit findings to architect for triage; do not fix or approve them.
+```
+
 ## GitHub PR / CI evidence bridge — validate actual visibility before relying on it
 
 When GitHub is the agreed source for the **PRODUCT** repository, Codex may commit **only approved task changes** and, **only under a separately approved push policy for the named task/branch**, push a working branch and offer a PR. Before push, inspect cwd, branch, remotes/upstream, base SHA, staged/unstaged/untracked changes and secrets. Don't move experiments into main to make them Web-visible, push ignored artifacts or treat commit as push. Configure protected main, required PR/reviews and PR CI through the product's actual GitHub settings with user approval and verify those controls; prompts alone do not install them. Never auto-merge main.

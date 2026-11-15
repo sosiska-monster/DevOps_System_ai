@@ -68,6 +68,12 @@ Evaluate on representative tasks: quick fix, standard implementation and hard in
 - Install third-party Skills, MCP or packages only for identified need; review provenance, scripts, network requests, licence/version and access boundary before approval.
 - Record whether the current tool surface actually supports sandbox, rule, hook, review or worktree mechanisms; do not require unavailable features.
 
+## Independent black-box tester — verifiable access boundary
+
+A black-box tester is an **optional restricted role**, not a preinstalled Codex agent. If the product has approved user-facing acceptance testing, first inspect the actual Codex/browser/test-runner tool surface and whether a separate process/account/sandbox can expose **only the preview/staging application's user interface** (or authorized consumer API). A second chat pointing at the same Codex working directory is **not isolation**, even with a "do not read code" prompt or read-only Git branch. Prefer browser-only access with temporary test credentials, no filesystem/editor/shell/Git/production credentials and no write permission to source.
+
+Test the boundary using harmless fixtures and access checks; report `CONFIGURED / VERIFIED / NOT VERIFIED / UNAVAILABLE` for source isolation, app reachability and prohibited side effects. Where safe isolation is unavailable, use a human tester or plainly label the result `NOT INDEPENDENT`; never represent tool restrictions that were not tested as technical enforcement. Browser interaction itself can mutate product data: use disposable records, explicit scenario permissions and no real purchases or external messages. Only install extra tooling with explicit approval and demonstrated benefit. See `modules/delivery.md` for the tester role, evaluation rubric and handoff.
+
 ## Minimal project memory
 
 Keep root `AGENTS.md` short and durable; route to `PROJECT.md`, current `TODO.md`, `REQUIREMENTS.md` for confirmed behavior, `Decision.md`, `Bugs.md`, `Gotchas.md` only as relevant. A tiny project may combine compatible files when it preserves authority and status. Personal `WordStyle.md` lives outside customer repos by default.

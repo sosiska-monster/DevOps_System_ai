@@ -2,6 +2,8 @@
 
 ## 0.2.0-draft — UNRELEASED / NOT PILOT-VALIDATED (2026-11-01)
 
+- 2026-11-15: Added optional independent Black-Box User Tester role for meaningful UI/customer journeys: verified interface-only permissions, safe test data, real interactions and evidence, subjective UX vs defects, architect triage and independently authorized minimal coding fixes. Skipped for trivial FAST edits; no automatic third agent, browser installation or test execution implied. RAD-032, T113–T117 added, all NOT RUN. Active projects remain on their pinned method SHA.
+
 - 2026-11-14: Condensed CORE.md to fit the 8,000-character ChatGPT Project Instructions limit (7381 characters), preserving key rules. No real Codex pilot run.
 - 2026-11-14: Added new-product Git/bootstrap and **finished-pilot-only** improvement workflow. Pin AI Development OS SHA, preserve or initialize local Git as approved, use meaningful commits; creating a remote/publication requires consent. Complete the test product first, then audit its shared repository and propose regression-backed methodology changes. RAD-031, T108–T112 are documentation scenarios NOT RUN. No new agents or tooling and no validated pilot claimed.
 - 2026-11-14: Reuse First — require a proportionate, verifiable public-source search before designing substantial new functionality (existing projects/libraries/APIs, licensing, fitness, maintenance), choose USE/ADAPT/BUILD. For brownfield, inspect existing code/dependencies first; trivial edits skip discovery. Implemented inside existing CORE/architecture/guide/manifest, no new files or tooling; real-project behavior remains NOT RUN.
