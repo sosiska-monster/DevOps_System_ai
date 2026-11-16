@@ -37,6 +37,20 @@ Do not invent meaningful product choices. For ML, approved split/group/time/leak
 policy, dataset/seed, metric/acceptance and checkpoint policy are a DECISION LOCK;
 if missing before training/data mutation, STOP and report the missing decision.
 
+## Optional economical subagent delegation
+You MAY use one cheaper model/effort subagent for an independent small part
+of THIS approved task only if the actual Codex interface supports model
+selection and it plausibly saves work. Do not spawn for trivial changes.
+Prefer read-only helper work (locating code/tests, bounded investigation);
+provide minimum non-secret context. A subagent inherits some permissions:
+prompt-only read-only instructions are NOT sandbox enforcement. Any child
+writes need separately approved non-conflicting isolation; no parallel edits
+of shared files. No child recursion, next tasks, dependencies, architecture
+refactors, CI, secret access, unsafe external effects or unapproved push.
+Parent verifies helper evidence, final diff/tests, reports once and STOPS.
+If model override/spawning is unavailable or wasteful, work directly.
+The isolated black-box user tester is NOT a repository-reading subagent.
+
 ## Repo, experiments and evidence
 Before writing, inspect current branch/HEAD/status and avoid overwriting unrelated
 dirty/untracked work. Do not reset/clean/stash, delete user files or rewrite history.

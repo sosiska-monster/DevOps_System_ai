@@ -12,6 +12,8 @@ This library supports **both** new-project design and **an ongoing existing prod
 
 ChatGPT Web is the analyst/architect, Codex Desktop executes and tests inside each real product repository, and the user approves significant decisions. **Reuse First:** before building a substantial new subsystem, Web checks current public GitHub/ecosystem sources for suitable existing products, libraries or APIs; verifies fit, licensing, maintenance and integration risk; then recommends USE / ADAPT / BUILD. For existing projects, inspect their own modules and installed dependencies first. No obligatory web research for trivial fixes; inaccessible sources are NOT VERIFIED. The process is **dynamic**: FAST for safe local changes, STANDARD for ordinary implementation, CONTROLLED for risky architecture, production operations, sensitive data, security or other high-consequence work. It must **switch during a task** when facts change; see `modules/delivery.md`.
 
+**Economical Codex helpers (optional):** When native Codex subagent model selection is verified, one approved task may delegate an independent narrow investigation to a cheaper model/effort, read-only by default. The coordinator owns integration, evidence, test and STOP; no subagent is justified for a one-line CSS edit. This method does not install agents or promise savings. See [USER_GUIDE.md](USER_GUIDE.md) and [modules/delivery.md](modules/delivery.md).
+
 ## Chat continuity and isolated experiments
 
 Continue in the same chat by default; create a new one only for a genuinely different track, independent review or unusable context. Keep a chat register only for actual parallel tracks. Experiments with side effects use an **approved isolated branch/worktree or disposable repo**, never `main`; read-only analysis needs neither a new chat nor a branch. Never auto-merge, reset or delete user work. See `modules/delivery.md` and [USER_GUIDE.md](USER_GUIDE.md). Textual rules are not verified sandbox enforcement.
@@ -61,7 +63,7 @@ Before declaring a stable release, use a disposable product repository and real 
 ## Reliable start in ChatGPT Web
 
 1. Create a ChatGPT Project per product. Place the full `CORE.md` text in **Project settings → Instructions** (subject to the actual UI's size limit), rather than assuming a GitHub URL loads it. If it does not fit, keep a shortened faithful CORE in instructions and attach the full file.
-2. Provide a link to https://github.com/sosiska-monster/ai-development-os and ask ChatGPT to read `MANIFEST.md` plus a relevant module. Confirm GitHub access or attach the specific files; **public or private** visibility alone does not guarantee the selected ChatGPT mode can read them.
+2. Provide a link to https://github.com/sosiska-monster/DevOps_System_ai and ask ChatGPT to read `MANIFEST.md` plus a relevant module. Confirm GitHub access or attach the specific files; **public or private** visibility alone does not guarantee the selected ChatGPT mode can read them.
 3. When the assistant uses an external module, it should identify what it actually read and which commit/ref it could verify. No invented version, link, full-read claim or deterministic access guarantee.
 4. Submit the customer's raw specification. ChatGPT works from customer intent toward a small approved Blueprint and project Environment Profile. Existing codebases can start with a read-only Codex audit.
 5. For a new project, after approved requirements/architecture and a separate request, ChatGPT prepares a minimal project-specific Codex Bootstrap. For an existing product, start from its actual code and working setup: only propose necessary adaptations, never run a generic reinitialization.
@@ -69,7 +71,7 @@ Before declaring a stable release, use a disposable product repository and real 
 
 Sample launch message:
 
-> Ты мой инженерный архитектор в ChatGPT Web; Codex Desktop пишет код. Моё постоянное ядро лежит в инструкциях этого ChatGPT Project. Библиотека: https://github.com/sosiska-monster/ai-development-os . Прочитай MANIFEST.md и только нужные модули, честно назови реально прочитанные файлы и проверенную версию. Сначала разберём ТЗ и архитектуру; проектный Codex Bootstrap только после согласования и моего отдельного запроса.
+> Ты мой инженерный архитектор в ChatGPT Web; Codex Desktop пишет код. Моё постоянное ядро лежит в инструкциях этого ChatGPT Project. Библиотека: https://github.com/sosiska-monster/DevOps_System_ai . Прочитай MANIFEST.md и только нужные модули, честно назови реально прочитанные файлы и проверенную версию. Сначала разберём ТЗ и архитектуру; проектный Codex Bootstrap только после согласования и моего отдельного запроса.
 
 ## Library map
 

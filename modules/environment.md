@@ -57,6 +57,12 @@ At setup, determine the **actual UI and available model/effort controls** for Ch
 
 Evaluate on representative tasks: quick fix, standard implementation and hard investigation. Track verified outcome, human repair, completion time and any actual usage data; use UNKNOWN when not observable. Establish no fixed provider/model lock-in. Never sacrifice privacy or verification to save tokens.
 
+## Economical subagent capability gate (optional)
+
+For approved project-specific Codex delegation, first inspect the installed app/CLI version and *actual* availability of subagent spawning (e.g. `spawn_agent`), per-spawn `model`/`reasoning_effort` or `[agents]` defaults, permitted model catalog, tool capability, effort compatibility and concurrent-thread limits. A spawned agent thread is not necessarily a user-visible ChatGPT/Codex chat. Use an existing trusted `.codex/config.toml` only after approval; editing `~/.codex/config.toml` requires **separate user consent** because it affects other projects. No automatic edits, agent installation, external API creation or claims that text switches the model.
+
+Test on a safe disposable fixture: confirm the effective cheaper model/effort (or mark UNVERIFIED), actual inherited tool/access permissions, a bounded read-only investigation and valid parent review. A soft prompt ban is not hard filesystem isolation; use tool/OS restrictions if hard access control matters. Do not hand a supposedly black-box user tester shared source access. Record `SUPPORTED / UNAVAILABLE / UNVERIFIED` for spawning and `OBSERVED / UNKNOWN` for end-to-end economic benefit; compare total root+child usage, rework and acceptance. See `modules/delivery.md`.
+
 ## Mechanical controls rather than promises
 
 **For each proposed control, specify:** threat, enforcement point, exact configuration or command appropriate to installed Codex/project version, test stimulus, observed outcome, and fallback. Do not assume a rule, permission profile, network denial, hook, CI or worktree exists or operates solely because documentation mentions it.

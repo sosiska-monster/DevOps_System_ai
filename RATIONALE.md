@@ -327,3 +327,13 @@
 **Rejected:** automatic always-on multiagent stack, duplicate QA bureaucracy on every button color change, code-reading tester masquerading as black-box, allowing tester to edit source or approve requirements, pretending an installed browser/sandbox exists, fake click logs and unsanctioned external side effects.
 **Testing:** T113–T117 added; all NOT RUN. Existing active pilot retains its own pinned older methodology SHA. This documentation addition is for future explicit adoption.
 **Revisit when:** completed-product evidence establishes whether isolated user testing catches otherwise missed defects without excessive token/tool and human overhead.
+
+## RAD-033 — Economical Codex subagents within one approved outcome (0.2.0-draft)
+
+**Status:** IMPLEMENTED AS OPTIONAL GUIDANCE, NOT PILOT-VALIDATED.
+**Observation:** repeated narrow investigation with a strong coordinator may waste expensive reasoning, while spawning helpers has its own context/synthesis costs. Current Codex subagent docs describe configurable model/effort and scoped agent threads, but actual installed interface matters.
+**Decision:** allow one read-only-by-default helper with a verified available cheaper model/effort, only for an independent part of an already approved task and when the benefit is plausible. Parent stays responsible for scope, implementation and independent diff/test verification; no authority to spawn new product tasks, refactor, edit shared files concurrently or access extra systems. Second helper needs a clearly independent task and project approval; no implicit recursion. Configuration is opt-in after actual runtime checks, not installed by this library commit. Unsupported features fall back to existing one-agent process; cheaper token price does not establish cheaper final accepted outcome.
+**References:** https://learn.chatgpt.com/docs/agent-configuration/subagents and https://learn.chatgpt.com/docs/config-file/config-reference .
+**Rejected:** always spawning for trivial CSS changes, uncontrolled subagent trees, prompt-only permission claims, extra orchestration stack, global config writes, invented effective model or savings.
+**Testing:** T118–T123 added, all NOT RUN; no real Codex subagent session, setup or token comparison performed.
+**Revisit when:** completed product trials supply actual total usage/rework, quality and safety evidence.
