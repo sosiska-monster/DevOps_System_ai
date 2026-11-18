@@ -2,6 +2,8 @@
 
 ## 0.2.0-draft — UNRELEASED / NOT PILOT-VALIDATED (2026-11-01)
 
+- 2026-11-18: Added Pattern Selection Policy (simple first): compare justified patterns with existing/simple functions or modules, no speculative abstractions, forced SOLID/DRY or unrequested refactoring. GoF examples and non-GoF Repository in architecture guidance; minimal CORE/AGENTS routing, RAD-034 and T124–T129 (NOT RUN). No new runtime, files, dependencies or pilot validation; pinned projects unchanged.
+
 - 2026-11-16: Optional economical Codex subagents: bounded independent portion of one approved task, verified lower-cost model/effort and permissions, parent reviews all findings/diff/tests; skip micro-edits, no uncontrolled recursion or automatic setup. Documented optional TOML, AGENTS guidance, RAD-033 and T118–T123 (NOT RUN); no live savings claimed.
 
 - 2026-11-15: Added optional independent Black-Box User Tester role for meaningful UI/customer journeys: verified interface-only permissions, safe test data, real interactions and evidence, subjective UX vs defects, architect triage and independently authorized minimal coding fixes. Skipped for trivial FAST edits; no automatic third agent, browser installation or test execution implied. RAD-032, T113–T117 added, all NOT RUN. Active projects remain on their pinned method SHA.

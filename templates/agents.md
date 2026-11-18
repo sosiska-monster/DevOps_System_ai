@@ -27,6 +27,17 @@ assertions, lint/type checks to obtain a false PASS. Test updates that preserve 
 strengthen correct behavior inside the feature are normal implementation, not a new task.
 An unapproved write boundary is behavioral guidance, not OS-enforced file security.
 
+## Pattern selection: simple first
+Use the existing project style and the simplest adequate function/module.
+Apply a design pattern only to solve a real requirement or observed problem;
+for substantial choices compare a simple alternative, benefits, costs and tests.
+No speculative abstractions, forced SOLID/DRY, empty ORM wrappers, factories
+for one trivial constructor, or unsolicited refactors. In Python a function
+or composition may suffice instead of a class hierarchy. Keep contracts and
+related tests; preserve approved scope and gates for architecture changes.
+FAST micro-edits need no separate pattern analysis. See modules/architecture.md
+in the project's pinned methodology when accessible.
+
 ## Risk and critical decisions
 FAST: small reversible low-risk edit; STANDARD: regular functionality;
 CONTROLLED: high-risk or irreversible change, especially security, data, production

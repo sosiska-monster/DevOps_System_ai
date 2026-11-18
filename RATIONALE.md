@@ -337,3 +337,12 @@
 **Rejected:** always spawning for trivial CSS changes, uncontrolled subagent trees, prompt-only permission claims, extra orchestration stack, global config writes, invented effective model or savings.
 **Testing:** T118–T123 added, all NOT RUN; no real Codex subagent session, setup or token comparison performed.
 **Revisit when:** completed product trials supply actual total usage/rework, quality and safety evidence.
+
+## RAD-034 — Pattern Selection Policy: simple first (0.2.0-draft)
+
+**Status:** APPROVED DESIGN DIRECTION; IMPLEMENTED AS GUIDANCE, NOT PILOT-VALIDATED.
+**Hypothesis:** knowing a design-pattern vocabulary helps architects choose robust solutions, but making patterns mandatory encourages AI-generated wrappers, speculative inheritance and unnecessary refactoring. No real comparative pattern-selection pilot has yet been observed.
+**Decision:** extend existing Architecture and Codex AGENTS guidance, not a new module or mandatory architecture layer. Prefer existing and simple functions/modules; for substantial decisions compare real problem, simplest alternative, relevant pattern, benefit, cost and verification. GoF, Repository, SOLID and DRY are tools, not quotas. Preserve working conventions, requirements, task boundaries and risk gates; no extra pattern review for FAST micro-edits. Python functions/composition may express Strategy or similar behavior without OOP scaffolding.
+**Rejected:** mandatory GoF checklist, default factories/interfaces or repository wrappers, class-count targets, broad refactoring for pattern compliance, separate pattern agent or runtime.
+**Testing:** T124–T129 added, NOT RUN. Existing pinned pilots are not upgraded. No product source or automatic enforcement was changed.
+**Revisit when:** observed project evidence demonstrates avoidable complexity, brittle coupling, premature abstraction or missed justified patterns and comparable regression outcomes.
